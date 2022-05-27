@@ -5,6 +5,6 @@ import java.util.Map;
 
 public class Constants {
 
-    public static final List<String> bodyTypes = List.of("Hatchback", "Sedan", "Crossover", "SUV", "Truck");
+    public static final List<String> bodyTypes = List.of("Hatchback", "Sedan", "Coupe", "Convertible", "SUV", "Van", "Wagon", "Truck", "Commercial");
 
 }

@@ -18,7 +18,7 @@ public class RecoController {
 
     @ResponseBody
     @GetMapping("/recommendedVehicles/{buyerId}")
-    public List<Vehicle> getRecommendedVehicles(@PathVariable String buyerId) {
+    public List<VehicleDTO> getRecommendedVehicles(@PathVariable String buyerId) {
         return vehicleSearchService.findSimilarUnsoldVehicles(buyerId);
         //return "Done";
     }

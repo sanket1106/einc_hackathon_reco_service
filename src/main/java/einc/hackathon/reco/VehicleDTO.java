@@ -1,19 +1,14 @@
 package einc.hackathon.reco;
 
+import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import java.time.Instant;
 import java.util.Date;
 
 @Data
-@NoArgsConstructor
-@Entity(name = "vehicles")
-public class Vehicle {
+@Builder
+public class VehicleDTO {
 
-    @Id
     private String id;
     private Integer year;
     private String make;
@@ -30,5 +25,5 @@ public class Vehicle {
     private String status;
     private String seller;
     private Integer askPrice;
-
+    private float score;
 }
