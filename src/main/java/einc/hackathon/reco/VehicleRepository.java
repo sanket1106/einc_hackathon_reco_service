@@ -8,4 +8,6 @@ import java.util.List;
 public interface VehicleRepository extends JpaRepository<Vehicle, String> {
 
     List<Vehicle> findAllByBuyer(String buyerId);
+
+    List<Vehicle> findTop5ByBuyerOrderBySoldDateDesc(String buyerId);
 }

@@ -17,6 +17,32 @@ public class RecoController {
     private final VehicleSearchService vehicleSearchService;
 
     @ResponseBody
+    @GetMapping("/recentlyBoughtVehicles/{buyerId}")
+    public List<VehicleDTO> getRecentlyBoughtVehicles(@PathVariable String buyerId) {
+        return vehicleRepository.findTop5ByBuyerOrderBySoldDateDesc(buyerId)
+            .stream()
+            .map(vehicle ->
+                VehicleDTO.builder()
+                    .askPrice(vehicle.getAskPrice())
+                    .bodyType(vehicle.getBodyType())
+                    .displacement(vehicle.getDisplacement())
+                    .id(vehicle.getId())
+                    .fuelType(vehicle.getFuelType())
+                    .make(vehicle.getMake())
+                    .model(vehicle.getModel())
+                    .seller(vehicle.getSeller())
+                    .soldDate(vehicle.getSoldDate())
+                    .status(vehicle.getStatus())
+                    .transmission(vehicle.getTransmission())
+                    .trim(vehicle.getTrim())
+                    .variant(vehicle.getVariant())
+                    .year(vehicle.getYear())
+                    .build())
+            .collect(Collectors.toList());
+        //return "Done";
+    }
+
+    @ResponseBody
     @GetMapping("/recommendedVehicles/{buyerId}")
     public List<VehicleDTO> getRecommendedVehicles(@PathVariable String buyerId) {
         return vehicleSearchService.findSimilarUnsoldVehicles(buyerId);
