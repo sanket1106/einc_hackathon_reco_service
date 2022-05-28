@@ -25,6 +25,7 @@ public class RecoController {
                 VehicleDTO.builder()
                     .askPrice(vehicle.getAskPrice())
                     .bodyType(vehicle.getBodyType())
+                    .buyer(vehicle.getBuyer())
                     .displacement(vehicle.getDisplacement())
                     .id(vehicle.getId())
                     .fuelType(vehicle.getFuelType())
