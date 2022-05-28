@@ -32,6 +32,7 @@ public class RecoController {
                     .model(vehicle.getModel())
                     .seller(vehicle.getSeller())
                     .soldDate(vehicle.getSoldDate())
+                    .soldPrice(vehicle.getSoldPrice())
                     .status(vehicle.getStatus())
                     .transmission(vehicle.getTransmission())
                     .trim(vehicle.getTrim())
